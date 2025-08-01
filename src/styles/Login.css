@@ -1,0 +1,40 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    background: var(--card-bg);
+    border-radius: 8px;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.login-form button {
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.login-form button:hover {
+    background: var(--button-hover);
+}
+
+.login-form a {
+    color: var(--button-bg);
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
