@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../utils/api'; // Import centralized API
 import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 import AccessibilityControls from './AccessibilityControls';
@@ -14,7 +14,7 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
+            await api.post('/api/auth/register', { username, email, password });
             alert('Registration successful! Please log in.');
             navigate('/login');
         } catch (err) {

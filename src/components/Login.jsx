@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../utils/api'; // Import centralized API
 import { useNavigate } from 'react-router-dom';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import NavBar from './NavBar';
 import AccessibilityControls from './AccessibilityControls';
 import '../styles/Login.css';
@@ -14,7 +14,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            const response = await api.post('/api/auth/login', { email, password });
             const token = response.data.token;
             localStorage.setItem('token', token);
             const decoded = jwtDecode(token);
